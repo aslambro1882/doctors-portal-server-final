@@ -4,7 +4,8 @@ const app = express();
 const cors = require('cors')
 const admin = require("firebase-admin");
 const ObjectId = require('mongodb').ObjectId
-const stripe = require('stripe')('sk_test_51JxZ7BHBi2EebUzAY5o4HqrLjd3nNRvYHGnb7nIlvAcKs1CUmbFqtUo9cO0FA8sR1pUeX93ULsGwE9CzPqIYzsRM00UXel10XY')
+const stripe = require('stripe')(process.env.STRIPE_SECRET);
+console.log(stripe);
 const fileUpload = require('express-fileupload');
 
 require('dotenv').config()
